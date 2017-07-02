@@ -5,14 +5,16 @@
     <entry>
       <title><![CDATA[tree 命令的使用]]></title>
       <url>/2017/07/01/tree-%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-      <content type="html"><![CDATA[<p>mac tree 命令</p>
-<p>mac下默认是没有 tree命令的，不过我们可以使用find命令模拟出tree命令的效果，如显示当前目录的 tree 的命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos;</div></pre></td></tr></table></figure>
-<p>当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就更方便了:</p>
+      <content type="html"><![CDATA[<p>macOS tree 命令</p>
+<p>开发项目时,当需要将项目结构展示如下效果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">├── src</div><div class="line">│   └── main</div><div class="line">│       ├── java</div><div class="line">│       │   └── com</div><div class="line">│       │       └── cn</div><div class="line">│       │           └── sso</div><div class="line">│       │               └── auth</div><div class="line">│       │                   ├── CookieUtil.java</div><div class="line">│       │                   ├── JwtUtil.java</div><div class="line">│       │                   ├── LoginController.java</div><div class="line">│       │                   └── WebApplication.java</div><div class="line">│       ├── resources</div><div class="line">│       │   └── application.properties</div><div class="line">│       └── webapp</div><div class="line">│           └── login.ftl</div><div class="line">└── pom.xml</div></pre></td></tr></table></figure></p>
+<p>我们不可能人工手打,这时就要用到tree 命令来帮我们一键生成,但macOS 下默认是没有 tree命令的，<br>不过我们可以使用find命令模拟出tree命令的效果，如显示某目录的tree 的命令(Linux系统下也可用)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos;</div></pre></td></tr></table></figure>
+<p>当然你也可以写一个别名来快速执行该命令，运行如下命令，将上面这个命令写到~/.bash_profile里，以后直接运行tree命令就可以了:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias tree=&quot;find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos;&quot;</div></pre></td></tr></table></figure>
-<p>也可以使用 homebrew 安装 tree 命令行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install tree</div></pre></td></tr></table></figure>
-<p>这样就在你的mac上安装了 tree 命令行了。</p>
+<p>macOS 下也可使用 homebrew 安装 tree 命令行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install tree</div></pre></td></tr></table></figure>
+<p>Homebrew 的使用可以参考 <a href="https://brew.sh/" target="_blank" rel="external">macOS 缺失的软件包管理器</a> 安装.</p>
+<p>这样你的mac上就可以使用 tree 命令行了.</p>
 ]]></content>
       
         
